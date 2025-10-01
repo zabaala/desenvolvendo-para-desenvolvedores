@@ -13,7 +13,9 @@ Ao invés disso:
 $container = null;
 
 $client = $container->get('guzzle');
+// ou...
 $client = $container->get('GuzzleHttp');
+// ou...
 $client = $container->get('HttpClient');
 ```
 
