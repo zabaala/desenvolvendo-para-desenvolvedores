@@ -31,10 +31,11 @@ Considerando que o projeto possui configurações definidas pela variável `$con
 
 ```php
 ...
-$config["collab"]["username"] = "";
-$config["collab"]["password"] = "";
-$config["collab"]["username_audio"] = "";
-$config["collab"]["password_audio"] = "";
+$config["DB"]["host"] = "";
+$config["DB"]["username"] = "";
+$config["DB"]["password"] = "";
+$config["DB"]["name"] = "";
+
 ...
 ```
 
