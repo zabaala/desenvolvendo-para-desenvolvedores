@@ -69,9 +69,9 @@ Ao invés disso:
 // .env
 API_BASE_URL=https://www.someapi.com/api/v1/contacts/emails
 
-// Service.php
 <php
 
+// Service
 class CollectContactEmails
 {
   // ...
@@ -105,9 +105,9 @@ Faça isso:
 // .env
 API_BASE_URL=https://www.someapi.com/api/v1
 
-// Service.php
 <php
 
+// Service
 class CollectContactEmails
 {
   // ...
