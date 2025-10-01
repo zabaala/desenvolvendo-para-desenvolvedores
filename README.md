@@ -98,7 +98,7 @@ class CollectContactEmails
 
 ```
 
-Ao invés disso:
+Faça isso:
 
 ```php
 
