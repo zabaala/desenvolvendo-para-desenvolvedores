@@ -132,3 +132,57 @@ class CollectContactEmails
 }
 
 ```
+
+## Feedback correto
+
+Evite que um feedback informe algo confuso.
+
+Considerando um teste de validação de NIF
+
+```php
+
+/**
+ * Validate Portuguese NIF (9 digits)
+ * @param string $nif
+ * @return bool
+ */
+protected function isValidNIF(string $nif): bool
+{
+    // Remove any non-digit characters
+    $cleanNif = preg_replace('/\D/', '', $nif);
+    
+    // Must be exactly 9 digits
+    if (strlen($cleanNif) !== 9) {
+        return false;
+    }
+
+    // Basic NIF validation algorithm
+    $checkDigit = 0;
+    for ($i = 0; $i < 8; $i++) {
+        $checkDigit += (int)$cleanNif[$i] * (9 - $i);
+    }
+    
+    $remainder = $checkDigit % 11;
+    $expectedLastDigit = $remainder < 2 ? 0 : 11 - $remainder;
+    
+    return (int)$cleanNif[8] === $expectedLastDigit;
+}
+```
+
+Ao invés disso:
+
+```php
+if (!isValidNIF($nif)) {
+  \ValidationException('NIF deve conter 9 caracteres')
+}
+
+```
+
+Faça isso:
+
+```php
+if (!isValidNIF($nif)) {
+  \ValidationException('NIF inválido')
+}
+
+```
