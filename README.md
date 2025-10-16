@@ -133,11 +133,11 @@ class CollectContactEmails
 
 ```
 
-## Feedback correto
+## Feedback claros
 
-Evite que um feedback informe algo confuso.
+Faça com que as implementeções devolvam feedbacks claros, ao invés de feedbacks confusos para os usuários / desenvolvedores.
 
-Considerando um teste de validação de NIF
+Considerando um teste de validação de NIF, que pode validar se o NIF está correto e se ele possui 9 dígitos:
 
 ```php
 
